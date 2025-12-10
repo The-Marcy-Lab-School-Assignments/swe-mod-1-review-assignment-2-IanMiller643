@@ -64,11 +64,11 @@ For each task below, identify which array method (forEach, filter, map, find, or
 
 1. I would use `students.filter()` since we only want an array of students who's grades are above and 85.
 
-2. 
+2. `students.find()` would be best to use here in   order to find a specific student within the array.
 
-3.
+3. The best method to use to calculate the average grade of all students would be `students.reduce()`.
 
-4.
+4. `students.map()` would be best to format the array into strings.
 
 
 ---
@@ -91,7 +91,9 @@ console.log(upperCaseLetters);
 
 ### Response 3
 
-Your response...
+The third line of code throws an error because the `capitalize()` function is being invoked when it shouldn't be. The `.map()` method takes in a callback function in order to work, and when you invoke `capitalize()`, it becomes a value instead of a function which results in an error.
+
+To avoid this in the future, you could write an **anonymous callback function** directly into the **higher-order array method** so that you don't accidentally invoke it.
 
 ---
 
@@ -120,4 +122,6 @@ const grandTotal = orders.reduce((sum, order) => {
 
 ### Response 4
 
-Your response...
+After this code runs, `grandTotal` will equal to 135. The `0` at the end of the reduce method allows for the initial value of `sum` to start at `0`. 
+
+In the first **iteration** of reduce, the value of sum will be `0`, the value of `order` will be the first object within the `orders` array, and `45` will be returned.
