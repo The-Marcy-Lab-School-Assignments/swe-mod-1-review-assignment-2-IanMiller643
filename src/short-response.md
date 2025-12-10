@@ -26,14 +26,16 @@ Part B: How would you modify the code so that reassigning `playlist2.songCount` 
 
 ### Response 1
 
-Your response...
+In the code above, 15 will be logged to the console. Since objects are **reference types**, if we assign `playlist1` to the `playlist2` variable, they will both reference the same object. This means that reassigning the value of `songCount` in `playList2` will also change the value of `songCount` in `playList1`.
+
+In order to prevent this, I would use the `structuredClone()` function to create a **true copy** of the object and assign it to `playList2`.
 
 **Corrected Code:**
 
 ```js
 // fix this!
 const playlist1 = { name: "My Favorites", songCount: 10 };
-const playlist2 = playlist1;
+const playlist2 = structuredClone(playlist1);
 playlist2.songCount = 15;
 console.log(playlist1.songCount);
 ```
@@ -60,7 +62,14 @@ For each task below, identify which array method (forEach, filter, map, find, or
 
 ### Response 2
 
-Your response...
+1. I would use `students.filter()` since we only want an array of students who's grades are above and 85.
+
+2. 
+
+3.
+
+4.
+
 
 ---
 
